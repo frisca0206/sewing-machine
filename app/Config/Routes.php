@@ -34,6 +34,15 @@ $routes->get('/', 'Home::index');
 // => default controller
 $routes->get('dashboard', 'DashboardController::index',['as' => 'dashboard']);
 
+$routes->get('/brand', 'BrandController::index',['as' => 'brand']);
+$routes->get('/brand/edit/(:num)', 'BrandController::edit/$1',['as' => 'brand-edit']);
+$routes->get('/brand/delete/(:num)', 'BrandController::delete/$1',['as' => 'brand-delete']);
+$routes->get('/brand/create', 'BrandController::create',['as'=> 'brand-create']);
+$routes->post('/brand/store', 'BrandController::store',['as' => 'brand-store']);
+$routes->post('/brand/update', 'BrandController::update',['as' => 'brand-update']);
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
