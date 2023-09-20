@@ -22,31 +22,39 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Manage Sewing Machine</h3>
+                            <h3 class="card-title">Manage Machine List</h3>
                             <div class="d-flex justify-content-end mb-1">
-                                <a href="<?= url_to('brand-create') ?>" class="btn btn-success mb-2"
-                                    id="btn_modal_create">Create</a>
+                                <a href="<?= url_to('machine-create') ?>" class="btn btn-success mb-2"
+                                    id="btn_model_create">Create</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="brand_table" class="table table-bordered table-hover masterdata-datatable">
+                            <table id="machine_table" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Kind Of Machine</th>
                                         <th>Brand</th>
+                                        <th>Model</th>
+                                        <th>Serial</th>
+                                        <th>Qty</th>
                                         <th width="150">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($brands as $key => $brand) : ?>
+                                    <?php foreach ($machines as $key => $machine) : ?>
                                     <tr>
                                         <td><?= $key + 1 ?></td>
-                                        <td><?= $brand['brand'] ?></td>
+                                        <td><?= $machine['kind_of_machine'] ?></td>
+                                        <td><?= $machine['brand'] ?></td>
+                                        <td><?= $machine['model'] ?></td>
+                                        <td><?= $machine['serial'] ?></td>
+                                        <td><?= $machine['qty'] ?></td>
                                         <td>
-                                            <a href="<?= url_to('brand-edit', $brand['id'])?>"
+                                            <a href="<?= url_to('machine-edit', $machine['id'])?>"
                                                 class="btn btn-primary btn-sm">Edit</a>
-                                            <a href="<?= url_to('brand-delete', $brand['id'])?>"
+                                            <a href="<?= url_to('machine-delete', $machine['id'])?>"
                                                 class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
